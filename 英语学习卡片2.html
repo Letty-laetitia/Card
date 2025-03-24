@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Word Flashcards</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 单词样式 */
+        .word {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* 音标样式 */
+        .phonetic {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* 词性和中文释义样式 */
+        .part-of-speech {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        /* 英文释义样式 */
+        .definition {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* 例句样式 */
+        .example {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        /* 中文翻译样式 */
+        .translation {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* 发声按钮样式 */
+        .speak-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .speak-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 卡片背景颜色 */
+        .card:nth-child(1) { background-color: #f0f8ff; }
+        .card:nth-child(2) { background-color: #fff0f5; }
+        .card:nth-child(3) { background-color: #f0fff0; }
+        .card:nth-child(4) { background-color: #fff8dc; }
+        .card:nth-child(5) { background-color: #f5f5f5; }
+        .card:nth-child(6) { background-color: #e6e6fa; }
+        .card:nth-child(7) { background-color: #fafad2; }
+        .card:nth-child(8) { background-color: #ffe4e1; }
+    </style>
+</head>
+<body>
+
+    <!-- 卡片 1 -->
+    <div class="card">
+        <div class="word">Ambiguous</div>
+        <div class="phonetic">/æmˈbɪɡjuəs/</div>
+        <div class="part-of-speech">adj. 模棱两可的</div>
+        <div class="definition">Having more than one possible meaning.</div>
+        <div class="example">The ending of the movie is ambiguous and open to interpretation.</div>
+        <div class="translation">电影的结局模棱两可，可以有不同的解释。</div>
+        <button class="speak-button" onclick="speak('Ambiguous')">发音</button>
+    </div>
+
+    <!-- 卡片 2 -->
+    <div class="card">
+        <div class="word">Benevolent</div>
+        <div class="phonetic">/bəˈnevələnt/</div>
+        <div class="part-of-speech">adj. 仁慈的</div>
+        <div class="definition">Well-meaning and kindly.</div>
+        <div class="example">The benevolent old man donated most of his wealth to charity.</div>
+        <div class="translation">那位仁慈的老人将大部分财富捐给了慈善机构。</div>
+        <button class="speak-button" onclick="speak('Benevolent')">发音</button>
+    </div>
+
+    <!-- 卡片 3 -->
+    <div class="card">
+        <div class="word">Concur</div>
+        <div class="phonetic">/kənˈkɜːr/</div>
+        <div class="part-of-speech">v. 同意</div>
+        <div class="definition">To agree or have the same opinion.</div>
+        <div class="example">I concur with your assessment of the situation.</div>
+        <div class="translation">我同意你对情况的评估。</div>
+        <button class="speak-button" onclick="speak('Concur')">发音</button>
+    </div>
+
+    <!-- 卡片 4 -->
+    <div class="card">
+        <div class="word">Diligent</div>
+        <div class="phonetic">/ˈdɪlɪdʒənt/</div>
+        <div class="part-of-speech">adj. 勤奋的</div>
+        <div class="definition">Showing care and effort in one's work.</div>
+        <div class="example">She is a diligent student who always completes her assignments on time.</div>
+        <div class="translation">她是一个勤奋的学生，总是按时完成作业。</div>
+        <button class="speak-button" onclick="speak('Diligent')">发音</button>
+    </div>
+
+    <!-- 卡片 5 -->
+    <div class="card">
+        <div class="word">Eloquent</div>
+        <div class="phonetic">/ˈɛləkwənt/</div>
+        <div class="part-of-speech">adj. 雄辩的</div>
+        <div class="definition">Fluent and persuasive in speaking or writing.</div>
+        <div class="example">The speaker delivered an eloquent speech that moved the audience.</div>
+        <div class="translation">演讲者发表了一场雄辩的演讲，打动了观众。</div>
+        <button class="speak-button" onclick="speak('Eloquent')">发音</button>
+    </div>
+
+    <!-- 卡片 6 -->
+    <div class="card">
+        <div class="word">Frugal</div>
+        <div class="phonetic">/ˈfruːɡəl/</div>
+        <div class="part-of-speech">adj. 节俭的</div>
+        <div class="definition">Sparing or economical with money.</div>
+        <div class="example">He is frugal and avoids unnecessary expenses.</div>
+        <div class="translation">他很节俭，避免不必要的开支。</div>
+        <button class="speak-button" onclick="speak('Frugal')">发音</button>
+    </div>
+
+    <!-- 卡片 7 -->
+    <div class="card">
+        <div class="word">Gregarious</div>
+        <div class="phonetic">/ɡrɪˈɡɛərɪəs/</div>
+        <div class="part-of-speech">adj. 合群的</div>
+        <div class="definition">Fond of company; sociable.</div>
+        <div class="example">She is a gregarious person who enjoys social gatherings.</div>
+        <div class="translation">她是一个合群的人，喜欢社交聚会。</div>
+        <button class="speak-button" onclick="speak('Gregarious')">发音</button>
+    </div>
+
+    <!-- 卡片 8 -->
+    <div class="card">
+        <div class="word">Hypothetical</div>
+        <div class="phonetic">/ˌhaɪpəˈθɛtɪkəl/</div>
+        <div class="part-of-speech">adj. 假设的</div>
+        <div class="definition">Based on a suggested idea or theory.</div>
+        <div class="example">The scientist proposed a hypothetical scenario to test the theory.</div>
+        <div class="translation">科学家提出了一个假设情景来测试这个理论。</div>
+        <button class="speak-button" onclick="speak('Hypothetical')">发音</button>
+    </div>
+
+    <!-- 发音功能 -->
+    <script>
+        function speak(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'en-US'; // 设置语言为英语
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
